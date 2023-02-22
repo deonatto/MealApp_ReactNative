@@ -11,6 +11,7 @@ const MealsOverviewScreen = ({ navigation, route }) => {
     return meal.categoryIds.indexOf(categoryId) >= 0;
   });
 
+  //useLayoutEffect to load bar title
   useLayoutEffect(() => {
     //find category title
     const categoryTitle = CATEGORIES.find((category) => {
@@ -24,6 +25,7 @@ const MealsOverviewScreen = ({ navigation, route }) => {
 
   const renderMealItem = ({ item }) => {
     const mealItemProps = {
+      id: item.id,
       title: item.title,
       imageUrl: item.imageUrl,
       affordability: item.affordability,
